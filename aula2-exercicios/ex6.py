@@ -18,20 +18,10 @@ for i in range(3):
 
 print()
 
-# achar o ponto mais para a esquerda e mais para a direita no plano)
-pt_esq = pontos[0]
-pt_dir = pontos[0]
-for i in pontos:
-    if i[0] < pt_esq[0]:
-        pt_esq = i
-
-    if i[0] > pt_dir[0]:
-        pt_dir = i
-
 # descobrir o coeficiente angular, m = (y2 - y1) / (x2 - x1)
-m = (pt_dir[1] - pt_esq[1]) / (pt_dir[0] - pt_esq[0])
+m = (pontos[1][1] - pontos[0][1]) / (pontos[1][0] - pontos[0][0])
 # descobrir o coeficiente linear, n = y - mx
-n = pt_dir[1] - (m * pt_dir[0])
+n = pontos[0][1] - (m * pontos[0][0])
 
 # se os 3 pontos estiverem na mesma reta, não é um triangulo
 pontos_iguais = 0
