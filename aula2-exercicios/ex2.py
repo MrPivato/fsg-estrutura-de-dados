@@ -13,8 +13,28 @@
 # - Se PP for inferior a 75% o aluno está ‘Reprovado por frequencia inferior a
 # 75%’.
 
-A1, A2, NF, PP = 0.0, 0.0, 0.0, 0.0
+A1, A2, NF, PP, media = 0.0, 0.0, 0.0, 0.0, 0.0
 
+PP = float(input("Informe seu percentual de Presença (%): "))
 
-if PP < 75:
+if PP < 75.0:
     print("Reprovado por frequencia inferior a 75%")
+else:
+    A1 = float(input("Informe sua nota A1: "))
+    A2 = float(input("Informe sua nota A2: "))
+    NF = A1 + A2
+
+    if NF < 6.0:
+        print("Sua nota foi inferior a 6, por favor realize a AF.")
+        AF = float(input("Informe sua nota AF: "))
+        if A1 > A2:
+            NF = A1 + AF
+        else:
+            NF = A2 + AF
+
+        if NF < 6.0:
+            print(f"Aluno REPROVADO com nota: {NF}")
+        else:
+            print(f"Aluno APROVADO com nota: {NF}")
+    else:
+        print(f"Aluno APROVADO com nota: {NF}")
