@@ -19,3 +19,30 @@ if d12 > abs(d13-d23) and d12 < d13+d23 and d13 > abs(d12-d23) and d13 < d12+d23
         print("Equilátero")
 else:
     print('Estes pontos não formam um triângulo, formam uma reta ou estão sobrepostos!')
+
+# verifica maior e catetos
+if d12 > d13 and d12 > d23:
+    maior = d12
+    c1 = d13
+    c2 = d23
+elif d13 > d12 and d13 > d23:
+    maior = d13
+    c1 = d12
+    c2 = d23
+else:
+    maior = d23
+    c1 = d12
+    c2 = d13
+
+# verifica qual tipo de triangulo
+if d12 == d13 and d13 == d23:
+    print('O triângulo é equilátero!')
+elif d12 == d13 or d13 == d23 or d12 == d23:
+    if round(maior**2,4) == round(c1**2,4) + round(c2**2,4):
+        print('O triângulo é retângulo e isósceles!')
+    else:
+        print('O triângulo é isósceles!')
+elif maior**2 == c1**2 + c2**2:
+    print('O triângulo é retângulo!')
+else:
+    print('O triângulo é escaleno!')

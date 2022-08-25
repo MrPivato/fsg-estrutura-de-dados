@@ -8,8 +8,7 @@ NUM_ALUNOS = 3
 
 for i in range(NUM_ALUNOS):
     nome = input(f"Digite o nome do {i+1}° aluno: ")
-    nota = float(input(f"Digite a nota do {i+1}° aluno: "))
-    alunos[nome] = nota
+    alunos[nome] = float(input(f"Digite a nota do {i+1}° aluno: "))
 
 media = 0
 for i, v in alunos.items():
